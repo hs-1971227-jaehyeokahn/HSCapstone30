@@ -1,0 +1,228 @@
+html {
+  font-size: 16px; /* 기본 폰트 크기 설정 */
+}
+
+body {
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.star-rating img {
+  width: 1.875rem; /* 30px */
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(0.625rem + 2vmin); /* 10px + 2vmin */
+  color: white;
+}
+
+.App-title {
+  font-size: 1.875rem; /* 30px */
+}
+
+.App-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem; /* 20px */
+}
+
+.search-section {
+  margin-bottom: 1.25rem; /* 20px */
+}
+
+.proudct-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Search-input {
+  margin: 1.25rem; /* 20px */
+  padding: 0.625rem; /* 10px */
+  width: 62.5vw; /* 1000px */
+}
+
+.Search-button {
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.Search-button::before {
+  content: "";
+  display: inline-block;
+  width: 1.25rem; /* 20px */
+  height: 1.25rem; /* 20px */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.Product-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 0.625rem; /* 10px */
+  border: 1px solid #252424;
+  padding: 0.3125rem; /* 5px */
+  margin: 0.625rem; /* 10px */
+  width: 50vw; /* 800px */
+  box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* 0px 4px 8px */
+  cursor: pointer;
+}
+
+.Product-item:hover .Product-image {
+  transform: scale(1.3);
+}
+
+.Product-image {
+  width: 7.5rem; /* 120px */
+  height: 6.25rem; /* 100px */
+  margin-left: 1.875rem; /* 30px */
+  transition: transform 0.3s ease;
+}
+
+.Product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 6.25rem; /* 100px */
+}
+
+.Product-title {
+  font-size: 0.9375rem; /* 15px */
+  color: #333;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 18.75rem; /* 300px */
+  font-family: 'Segoe UI Emoji', sans-serif;
+}
+
+.Product-price {
+  font-size: 0.875rem; /* 14px */
+  color: #666;
+}
+
+.Product-rating {
+  display: flex;
+  align-items: center;
+}
+
+.Product-rating span {
+  margin-left: 0.3125rem; /* 5px */
+  font-size: 0.875rem; /* 14px */
+  color: #666;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination button {
+  padding: 0.3125rem 0.625rem; /* 5px 10px */
+  margin: 0.3125rem 0.3125rem; /* 5px 5px */
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.pagination button.active {
+  font-weight: bold;
+}
+
+.pagination button:not(:last-child)::after {
+  content: '|';
+  margin-left: 1.25rem; /* 20px */
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+
+/* 769px에서 900px 구간을 위한 스타일 */
+@media (min-width: 769px) and (max-width: 900px) {
+  .Search-input {
+    width: 80vw;
+    max-width: none; /* 최대 너비 제한 해제 */
+  }
+
+  .Product-item {
+    width: 70vw;
+    max-width: none; /* 최대 너비 제한 해제 */
+  }
+}
+
+@media (max-width: 768px) {
+  .Search-input {
+    width: 80vw;
+  }
+
+  .Product-item {
+    width: 80vw;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .Product-info {
+    margin-right: 0;
+    margin-top: 1rem;
+  }
+
+  .Product-image {
+    width: 5rem; /* 80px */
+    height: 4.1667rem; /* 100px */
+    margin-left: 0;
+  }
+
+  .App-header {
+    font-size: calc(0.5rem + 3vmin); /* 8px + 3vmin */
+  }
+
+  .App-title {
+    font-size: 1.5rem; /* 24px */
+  }
+}
+
+@media (max-width: 480px) {
+  .Search-input {
+    width: 90vw;
+  }
+
+  .Product-item {
+    width: 90vw;
+    padding: 0.5rem;
+  }
+
+  .App-header {
+    font-size: calc(0.5rem + 4vmin); /* 8px + 4vmin */
+  }
+
+  .App-title {
+    font-size: 1.25rem; /* 20px */
+  }
+
+  .Product-title, .Product-price {
+    font-size: 0.875rem; /* 14px */
+  }
+
+  /* 이미지 확대 효과 제거 */
+  .Product-item:hover .Product-image {
+    transform: none;
+  }
+}
